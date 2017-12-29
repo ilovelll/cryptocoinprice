@@ -1,0 +1,62 @@
+{
+    "name": "cryptocoinprice",
+    "displayName": "CryptoCoinPrice",
+    "description": "Show the current cryptocurrencies price",
+    "version": "0.0.1",
+    "publisher": "jonyli",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ilovelll/cryptocoinprice"
+    },
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "icon": "assets/icon.png",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "cryptocoinprice.coinSymbols": {
+                    "type": "array",
+                    "default": [
+                        "BTC",
+                        "ETH"
+                    ],
+                    "description": "The list of Crypto coin symbols that we want to display."
+                },
+                "cryptocoinprice.toSymbol": {
+                    "type": "string",
+                    "default": "USD",
+                    "description": "The currency to use for crypto coin prices."
+                },
+                "cryptocoinprice.userColor": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If true, highlights items red when they're down and green when they're up."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "socket.io-client": "^2.0.4"
+    }
+}
