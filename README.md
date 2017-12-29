@@ -12,9 +12,8 @@ You can use below settings to add you favourite cryptocurrency:
     "ETH"
     ],
 ```
-
 It supports color to show price up and price down.
-![screenshot](https://github.com/ilovelll/cryptocoinprice/assets/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/ilovelll/cryptocoinprice/master/assets/screenshot.png)
 
 ## Extension Settings
 
