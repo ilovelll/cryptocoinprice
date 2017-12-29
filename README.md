@@ -1,7 +1,7 @@
 # CryptoCoinPrice README
 
-Another one extention for visual studio code to show the value of cryptocurrency you looking for.
-
+Another one extention for visual studio code to show the value of cryptocurrency like Bitcoin, Ethereum, Litecoin, XMR etc.
+This extention can be found at [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ilovelll.cryptocoinprice).
 ## Features
 
 This extention use WebSocket API by [cryptocompare.com](https://www.cryptocompare.com/api/#introduction). All supported coins can be found in [cryptocompare.com](https://www.cryptocompare.com/api/#introduction).
@@ -30,3 +30,8 @@ This extension contributes the following settings:
 ### 0.0.1
 
 Initial repository
+
+### 0.1.0
+
+Update Visual Studio Code Marketplace Address
+Update publisher
