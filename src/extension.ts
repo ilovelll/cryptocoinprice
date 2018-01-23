@@ -31,6 +31,9 @@ class PriceTag {
     private _subCurr: Array<object>;
     private _useColor:boolean;
     private _toSymbol: string;
+    private _showChangePct: boolean;
+    private _pricePrecision: number;
+    private _changePctPrecision: number;
     private _socket = io('https://streamer.cryptocompare.com/');
 
     constructor(){
@@ -42,6 +45,9 @@ class PriceTag {
         });
         this._useColor = config.get('cryptocoinprice.userColor', true);
         this._toSymbol = config.get('cryptocoinprice.toSymbol', 'USD').toUpperCase();
+        this._showChangePct = config.get('cryptocoinprice.showChangePct', true);
+        this._pricePrecision = config.get('cryptocoinprice.pricePrecision', 2);
+        this._changePctPrecision = config.get('cryptocoinprice.changePctPrecision', 2);
     }
     public cleanUp() {
         this._socket.emit('SubRemove', { subs: this._sub.map(coin => `5~CCCAGG~${coin}~${this._toSymbol}`) });
@@ -94,7 +100,7 @@ class PriceTag {
         symbolStatusText.show();
 
         let TOSYMBOL = CCC.STATIC.CURRENCY.getSymbol(coin.TOSYMBOL);
-        priceStatusText.text = `${TOSYMBOL}${coin.PRICE}`;
+        priceStatusText.text = `${TOSYMBOL}` + Number(`${coin.PRICE}`).toFixed(this._pricePrecision);
         if (this._useColor && coin.FLAGS & 1) {
             priceStatusText.color = UP_COLOR;
         } else if (this._useColor && coin.FLAGS & 2) {
@@ -102,7 +108,7 @@ class PriceTag {
         }
         priceStatusText.show();
 
-        let change = ((coin.PRICE - coin.OPEN24HOUR) / coin.OPEN24HOUR * 100).toFixed(2) + '%';
+        let change = ((coin.PRICE - coin.OPEN24HOUR) / coin.OPEN24HOUR * 100).toFixed(this._changePctPrecision) + '%';
         if (this._useColor && coin.PRICE - coin.OPEN24HOUR > 0) {
             change = `+${change}`;
             changeStatusText.color = UP_COLOR;
@@ -110,7 +116,10 @@ class PriceTag {
             changeStatusText.color = DOWN_COLOR;
         }
         changeStatusText.text = change;
-        changeStatusText.show();
+        if(this._showChangePct)
+        {
+            changeStatusText.show();
+        }
     }
 }
 // this method is called when your extension is deactivated

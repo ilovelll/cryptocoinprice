@@ -39,6 +39,21 @@
                     "type": "boolean",
                     "default": true,
                     "description": "If true, highlights items red when they're down and green when they're up."
+                },
+                "cryptocoinprice.showChangePct": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If true, shows the 24hr change in price as a percentage"
+                },
+                "cryptocoinprice.pricePrecision": {
+                    "type": "number",
+                    "default": 2,
+                    "description": "How many decimal points of the price to show"
+                },
+                "cryptocoinprice.changePctPrecision": {
+                    "type": "number",
+                    "default": 2,
+                    "description": "How many decimal points of the 24hr price change to show"
                 }
             }
         }
