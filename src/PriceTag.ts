@@ -71,7 +71,7 @@ export class PriceTag {
     // }
     that._socket.emit('SubAdd', { subs: that._sub.map(coin => `5~CCCAGG~${coin}~${that._toSymbol}`) });
     that._socket.on("m", (message:string) => {
-      console.log('get message: ', message);
+      // console.log('get message: ', message);
       var messageType = message.substring(0, message.indexOf("~"));
       var res:any = {};
       if (messageType === CCC.STATIC.TYPE.CURRENTAGG) {

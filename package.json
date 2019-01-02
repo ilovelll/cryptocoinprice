@@ -2,14 +2,14 @@
     "name": "cryptocoinprice",
     "displayName": "CryptoCoinPrice",
     "description": "Show the current cryptocurrencies price",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "publisher": "ilovelll",
     "repository": {
         "type": "git",
         "url": "https://github.com/ilovelll/cryptocoinprice"
     },
     "engines": {
-        "vscode": "^1.19.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
         "Other"
@@ -21,6 +21,8 @@
     "icon": "assets/icon.png",
     "contributes": {
         "configuration": {
+            "type": "object",
+            "title": "cryptocoinprice configuration",
             "properties": {
                 "cryptocoinprice.coinSymbols": {
                     "type": "array",
@@ -66,7 +68,7 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.42",
+        "@types/mocha": "^2.2.48",
         "@types/node": "^8.10.25",
         "@types/socket.io-client": "^1.4.32",
         "tslint": "^5.8.0",
