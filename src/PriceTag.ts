@@ -20,8 +20,8 @@ export class PriceTag {
   private _socket = io('https://streamer.cryptocompare.com/');
 
   constructor() {
-    const config = vscode.workspace.getConfiguration('hellocoin');
-    const configuredSymbols = config.get<string[]>('hellocoin.coinSymbols', ["BTC", "ETH"]).map(symbol => symbol.toUpperCase());
+    const config = vscode.workspace.getConfiguration();
+    const configuredSymbols = config.get<string[]>('cryptocoinprice.coinSymbols', ["BTC", "ETH"]).map(symbol => symbol.toUpperCase());
     this._sub = configuredSymbols;
     this._subCurr = this._sub.map((coin, index) => {
       return { SYMBOL: coin, OPEN24HOUR: 0 };
