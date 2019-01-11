@@ -2,7 +2,7 @@
     "name": "cryptocoinprice",
     "displayName": "CryptoCoinPrice",
     "description": "Show the current cryptocurrencies price",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "ilovelll",
     "repository": {
         "type": "git",

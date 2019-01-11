@@ -23,3 +23,8 @@ Thanks [nt85](https://github.com/nt85) for making the PR to enhance the format o
 ### 0.2.1
 
 Update dependencies and split business code into files.
+
+### 0.2.2
+
+Fixed issues with currency and coinSymbols #4
+Thanks [calculi](https://github.com/calculi) for making the PR.
